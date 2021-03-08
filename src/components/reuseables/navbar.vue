@@ -1,42 +1,44 @@
 
 <template>
-    <div class="w-60-l w-40 bg-black grow hover-bg-grey hover-purple fl ph2 pv2 pointer br3 shadow-5">
-        <div class="w-100  pv2-l fl tc">
-            <img src="@/assets/img/lof.png"  class="cf  white h3" />
+    <div class="w-60-m w-100 w3-l h3 h5-l bg-washed-yellow flex flex-column-l flex-row hover-bg-grey hover-purple fl pointer br3 shadow-5" style="">
+        <div class="tc flex ph2 w-30 w-20-m w-100-l">
+            <img src="@/assets/img/icon.png"  class="mt1 center" style="" />
         </div>
-        <div class="fl w-100-l w-50 ">
-            <div class="tc pt5 ">
-                <router-link class="link white" to="/"> 
-                    <i class="f3 grow dim fas fa-home" aria-hidden="true"/> 
-                </router-link>
+        <div class="w-100 pa2 bg-black fl br3 pb4-l flex flex-column-l flex-row items-center">
+            <div class="fl w-100">
+                <div class="tc pv3-l ">
+                    <router-link class="link white" to="/"> 
+                        <i class="f3 grow dim fa fa-store washed-yellow" aria-hidden="true"/> 
+                        <small class="db mid-gray">shop</small>
+                    </router-link>
+                </div>
             </div>
-        </div>
-        <div class="fl w-100">
-            <div class="tc pt5 ">
-                <router-link class="link white" to="/"> 
-                    <i class="f3 grow dim fas fa-user" aria-hidden="true"/> 
-                </router-link>
+            
+            <div class="fl w-100">
+                <div class="tc pv3-l ">
+                    <router-link class="link white" to="/"> 
+                        <i class="f3 grow dim fa fa-shopping-basket washed-yellow" aria-hidden="true"/>
+                        <small class="db mid-gray">cart</small>
+                    </router-link>
+                </div>
             </div>
-        </div>
-        <div class="fl w-100">
-            <div class="tc pt5 ">
-                <router-link class="link white" to="/"> 
-                    <i class="f3 grow dim fas fa-envelope" aria-hidden="true"/> 
-                </router-link>
+
+            <div class="fl w-100">
+                <div class="tc pv3-l ">
+                    <router-link class="link white" to="/"> 
+                        <i class="f3 grow dim fa fa-truck washed-yellow" aria-hidden="true"/> 
+                        <small class="db mid-gray">ship</small>
+                    </router-link>
+                </div>
             </div>
-        </div>
-        <div class="fl w-100">
-            <div class="tc pt5 ">
-                <router-link class="link white" to="/"> 
-                    <i class="f3 grow dim fas fa-cog" aria-hidden="true"/> 
-                </router-link>
-            </div>
-        </div>
-        <div class="fl w-100">
-            <div class="tc pt6 pb4 ">
-                <router-link class="link white" to="/"> 
-                    <i class="f3 grow dim fas fa-sign-out" aria-hidden="true"/> 
-                </router-link>
+
+            <div class="fl w-100">
+                <div class="tc pv3-l ">
+                    <router-link class="link white" to="/contact"> 
+                        <i class="f3 grow dim fa fa-heart red" aria-hidden="true"/> 
+                        <small class="db mid-gray">care</small>
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>

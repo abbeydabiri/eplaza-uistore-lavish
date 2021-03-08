@@ -20,6 +20,7 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.8.3",
         "vue-router": "^3.1.5",
+        "vuex": "^3.5.1",
         "webpack-merge": "^4.2.2"
     },
     "devDependencies": {
