@@ -6,8 +6,8 @@ export default function createAPICall() {
         var setupAPICall = function () {
              
             axios.get("/api/onlinestore").then((response) => {
-                var categoryList = (response.data == null) ? [] : response.data;
-                store.dispatch('category/updateList', Object.freeze(categoryList));
+                var onlineStore = (response.data == null) ? {} : response.data;
+                store.dispatch('onlinestore/updateStore', Object.freeze(onlineStore));
             }).catch((e) => {
                 console.log(e)
             })
@@ -16,7 +16,7 @@ export default function createAPICall() {
         
         store.subscribe((action, state) => {
             switch (action.type) {
-                case "category/CALL_API":
+                case "onlinestore/CALL_API":
                     setupAPICall();
                     break;
             }

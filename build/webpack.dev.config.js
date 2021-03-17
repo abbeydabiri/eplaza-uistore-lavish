@@ -18,9 +18,9 @@ module.exports = merge(base, {
     overlay: true,
     disableHostCheck: true,
 	proxy : {
-        '/api/*': { "secure": false, "changeOrigin": true, "target": "https://classiclicks.eplaza.cloud"},
-        '/files/*': { "secure": false, "changeOrigin": true, "target": "https://classiclicks.eplaza.cloud"},
-        '/images/*': { "secure": false, "changeOrigin": true, "target": "https://classiclicks.eplaza.cloud"},
+        '/api/*': { "secure": false, "changeOrigin": true, "target": "https://electric.eplaza.cloud"},
+        '/files/*': { "secure": false, "changeOrigin": true, "target": "https://electric.eplaza.cloud"},
+        '/images/*': { "secure": false, "changeOrigin": true, "target": "https://electric.eplaza.cloud"},
 	}
   }
 
