@@ -22,8 +22,8 @@
 
                 <div class="f7 fl pa2 w-100 w-40-ns tc tl-ns gray">
                     <span class="black">Shop by: </span>
-                    <span class="pointer dark-gray" @click="$router.push({name:'category', params:{category:'all'}})">All Categories</span> 
-                    <span class="pointer" @click="$router.push({name:'category', params:{category:category.Category}})" v-for="(category, index) in getCategoryList" :key="index">| {{category.Category}} </span> 
+                    <span class="pointer " @click="$router.push({name:'category', params:{category:'all'}})" :class="{'dark-gray':curCategory==''}">All Categories</span> 
+                    <span class="pointer ml1" @click="$router.push({name:'category', params:{category:category.Category}})" :class="{'dark-gray':curCategory==category.Category}" v-for="(category, index) in getCategoryList" :key="index"> | {{category.Category}} </span> 
                 </div>
             </div>
 
@@ -67,12 +67,16 @@
             ...mapGetters('onlinestore', ['getCategoryList','getStoreTitle']),
         },
         watch: {
-            curCategory: function (newCurCategory, oldCurCategory) {
+            '$route.params.category': function(newCurCategory, oldCurCategory) {
+                this.curCategory = newCurCategory
+                if (this.curCategory == "all") {
+                    this.curCategory = ""
+                }
                 this.searchProducts()
             }
         },
         mounted() { 
-           this.searchProducts()
+            this.searchProducts()
         },
         methods:{
             humanNumber,
