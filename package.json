@@ -14,7 +14,6 @@
         "axios": "^0.19.2",
         "cross-env": "^7.0.0",
         "extract-css-chunks-webpack-plugin": "^4.7.4",
-        "node-sass": "^4.13.1",
         "sass": "^1.25.0",
         "sass-loader": "^8.0.2",
         "vue": "^2.6.12",
