@@ -42,13 +42,13 @@
                         </div>
                         </td>
                         <td class="pv3 pr3 bb b--black-20">Product Name</td>
-                        <td class="pv3 pr3 bb b--black-20">₦ 200000</td>
+                        <td class="pv3 pr3 bb b--black-20"> 200000</td>
                         <td class="pv3 pr3 bb b--black-20">
                         <a class="ba pa2 bg-white b--light-gray">-</a>
                         <a class="ba pa2 b--light-gray">1</a>
                         <a class="ba pa2 bg-white b--light-gray">+</a>
                         </td>
-                        <td class="pv3 pr3 bb b--black-20">₦ 200000</td>
+                        <td class="pv3 pr3 bb b--black-20"> 200000</td>
                         <td class="pv3 pr3 bb b--black-20">
                             <i class="fas pl3 red fa-times"></i>
                         </td>
@@ -61,7 +61,7 @@
                         <td class="pv3 pr3 bb b--black-20"></td>
                         <td class="pv3 pr3 bb b--black-20">Total</td>
                         <td class="pv3 pr3 bb b--black-20">
-                        <small>₦</small>2000
+                        <small></small>2000
                         </td>
                     </tr>
                     </tbody>

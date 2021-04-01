@@ -42,7 +42,7 @@
                         </div>
                         </td>
                         <td class="pv3 pr3 bb b--black-20">Product Name</td>
-                        <td class="pv3 pr3 bb b--black-20">₦ 200000</td>
+                        <td class="pv3 pr3 bb b--black-20"> 200000</td>
                         <td class="pv3 pr3 bb b--black-20">
 
                             <span class="w-100 fl f6 pa2 pointer noselect">
@@ -57,7 +57,7 @@
                                 </span>
                             </span>
                         </td>
-                        <td class="pv3 pr3 bb b--black-20">₦ 200000</td>
+                        <td class="pv3 pr3 bb b--black-20"> 200000</td>
                         <td class="pv3 pr3 bb b--black-20">
                             <i class="fas pl3 red fa-times"></i>
                         </td>
@@ -69,7 +69,7 @@
                         <td class="pv3 pr3 bb b--black-20"></td>
                         <td class="pv3 pr3 bb b--black-20">Sub Total</td>
                         <td class="pv3 pr3 bb b--black-20">
-                        <small>₦</small>2000
+                        <small></small>2000
                         </td>
                     </tr>
                     <tr>
@@ -79,7 +79,7 @@
                         <td class="pv3 pr3 bb b--black-20"></td>
                         <td class="pv3 pr3 bb b--black-20">Tax</td>
                         <td class="pv3 pr3 bb b--black-20">
-                        <small>₦</small>2000
+                        <small></small>2000
                         </td>
                     </tr>
                     <tr>
@@ -89,7 +89,7 @@
                         <td class="pv3 pr3 bb b--black-20"></td>
                         <td class="pv3 pr3 bb b--black-20">Total</td>
                         <td class="pv3 pr3 bb b--black-20">
-                        <small>₦</small>2000
+                        <small></small>2000
                         </td>
                     </tr>
                     <tr>

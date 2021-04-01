@@ -34,7 +34,7 @@
                         <i :class="{'dn':!showImageNav}" class="absolute right-0 pointer fa fa-chevron-right mr2 pa3 bg-black-10 hover-dark-gray white ba b--black-05 br-100" @click="goRight" />
                     </div>
 
-                    <div class="flex flex-row items-center w-100 center tc"> 
+                    <div class="flex flex-row items-center w-100 center tc pt1"> 
                         <div v-for="(image, index) in record.imageList" :key="index" class="ph2 h3 w3 fl">
                             <div class="bn w-100 h-100 pointer" src="" @click="record.Image = image.Filepath" > 
                                 <img class="bn w-100" :src="image.Filepath"/>    
@@ -54,7 +54,7 @@
                     </div>
                     
                     <div class="w-100 fl f2-l f3 fw6 bt bb b--black-05 pv2"> 
-                        <span class="b pr1">₦</span> {{humanNumber(record.Amount)}}
+                        <span class="b pr1"></span> {{humanNumber(record.Amount)}}
                     </div>
                     <div v-if="record.ItemDescription!==''" class="mid-gray w-100 fl f6 pv3">
                         {{record.ItemDescription}}
@@ -114,6 +114,9 @@
         mounted() { 
            this.getPricelistline()
         },
+        created() {
+            
+        },
         methods:{
             humanNumber,
             goLeft() {
@@ -147,6 +150,11 @@
                             app.record.imageList = []
                         }
                         app.isFound = true;
+
+
+                        document.querySelector('meta[property="og:title"]').setAttribute("content", app.record.Title);
+                        document.querySelector('meta[property="og:image"]').setAttribute("content", app.record.Image);
+                        document.querySelector('meta[property="og:description"]').setAttribute("content", app.record.Description);
                     }
                 }).catch((e) => { console.log(e); });
             },

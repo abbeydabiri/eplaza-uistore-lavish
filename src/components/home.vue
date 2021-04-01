@@ -94,7 +94,7 @@
                                 var productList = (response.data.Body != null) ? response.data.Body : []
                                 for (let i = 0; i < productList.length; i++) {
                                     productList[i]["Focus"] = false
-                                    productList[i]["Currency"] = "₦"
+                                    productList[i]["Currency"] = ""
                                 }
                                 app.productList = productList
                             break;

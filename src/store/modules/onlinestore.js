@@ -2,11 +2,13 @@
 const state = {
     image: "",
     title: "",
+    contactInfo: {},
     categoryAll: [],
     categoryList: {},
 }
 
 const getters = {
+    getContactInfo: state => state.contactInfo,
     getStoreTitle: state => state.title,
     getStoreImage: state => state.image,
     getCategoryAll: state => state.categoryAll,
@@ -30,6 +32,15 @@ const mutations = {
     UPDATE_STORE(state, onlineStore) {
         state.title = onlineStore.Title
         state.image = onlineStore.Image
+        
+        state.contactInfo.Contact = onlineStore.Contact
+        state.contactInfo.Mobile = onlineStore.Mobile
+        state.contactInfo.Email = onlineStore.Email
+        state.contactInfo.Street = onlineStore.Street
+        state.contactInfo.City = onlineStore.City
+        state.contactInfo.State = onlineStore.State
+        state.contactInfo.Country = onlineStore.Country
+        
         state.categoryAll = onlineStore.CategoryList
         var categoryList = state.categoryAll
 
