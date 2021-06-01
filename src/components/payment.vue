@@ -1,7 +1,7 @@
 <template> 
     <div class="flex flex-column flex-row-l vh-100 mw8 center">
     
-        <div class="pa2 pl3-l pr1-l pt4-l">
+        <div class="pa2 pl3-l pr1-l pt2-l">
             <navbar />
         </div>
 
@@ -14,7 +14,7 @@
             <div class="f7 fl pa2 w-100 w-60-l tc tr-ns">
                 <span  @click="$router.go(-1)" class="gray">Home </span>
                 <small>/</small>
-                <span @click="$router.push({name:'basket'})"  class="mid-gray pointer">Shopping Basket</span>
+                <span @click="$router.push({name:'cart'})"  class="mid-gray pointer">Shopping Cart</span>
                 <small>/</small>
                 <span @click="$router.push({name:'checkout'})" class="dark-gray">Shipping Details</span>
                 <small>/</small>
@@ -68,7 +68,7 @@
                 </table>
 
                 <div class="fl w-100 pt3">
-                    <router-link to="/checkout" class="f5-ns f6 w-20-l w-25-m w-30 fl tc link dim pv2 mv2 dib white bg-dark-gray">Basket</router-link>
+                    <router-link to="/checkout" class="f5-ns f6 w-20-l w-25-m w-30 fl tc link dim pv2 mv2 dib white bg-dark-gray">Cart</router-link>
 
                     <span class="f5-ns f6 w-20-l w-25-m w-30 fr tc link dim pv2 mv2 dib white bg-dark-gray">Pay Now</span>
                 </div>

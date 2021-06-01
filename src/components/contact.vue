@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-column flex-row-l vh-100 mw8 center"> 
         
-        <div class="pa2 pl3-l pr1-l pt4-l">
+        <div class="pa2 pl3-l pr1-l pt2-l">
             <navbar />
         </div>
 

@@ -6,7 +6,7 @@ import contactComponent from "@/components/contact"
 import productComponent from "@/components/product";
 import categoryComponent from "@/components/category";
 
-import basketComponent from "@/components/basket";
+import cartComponent from "@/components/cart";
 import checkoutComponent from "@/components/checkout";
 import paymentComponent from "@/components/payment";
 
@@ -24,7 +24,7 @@ export const router = new Router({
         // { path: "/about", name:"about", component: aboutComponent },
         { path: "/contact", name:"contact", component: contactComponent },
         
-        { path: "/basket", name:"basket", component: basketComponent },
+        { path: "/cart", name:"cart", component: cartComponent },
         { path: "/payment", name:"payment", component: paymentComponent },
         { path: "/checkout", name:"checkout", component: checkoutComponent },
         { path: "/c/:category", name:"category", component: categoryComponent },

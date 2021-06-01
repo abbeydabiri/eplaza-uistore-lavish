@@ -1,69 +1,91 @@
 <template> 
     <div class="flex flex-column flex-row-l vh-100 mw8 center">
     
-        <div class="pa2 pl3-l pr1-l pt4-l">
+        <div class="pa2 pl3-l pr1-l pt2-l">
             <navbar />
         </div>
 
-        <div class="fl w-100 h-100 overflow-y-scroll flex flex-column">
-            <div class="fl pa2 pt4-l w-100">
-                <span class="fw5 black f2">{{getStoreTitle}}</span>
-            </div>
+        <div class="fl w-100 h-100 overflow-y-scroll flex flex-column pt3">
             
-
-            <div class="f7 fl pa2 w-100 w-60-l tc tr-ns">
-                <span  @click="$router.go(-1)" class="black">Go Back </span>
-                <small>/</small>
-                <span @click="$router.push({name:'basket'})"  class="mid-gray pointer">Shopping Basket</span>
-                <small>/</small>
-                <span class="black">Shipping Details</span>
+            <div class="f6 fl w-100 tl ph2">
+                <span @click="$router.push({name:'cart'})" class="fw5 black "> Shopping Cart > </span>
+                <span class="fw5 black pl1 "> Checkout > </span>
+                <span class="fw5 gray ph1 "> Shipping > </span>
+                <span class=" fw5 gray "> Payment </span>
             </div>
 
-     
-            <div class="f7 fl pa2 w-100 w-60-l tc tl-ns">
-                <div class="fl w-20-l w-third-m w-50 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="First Name" type="text" v-model="record.Firstname">
+            <div class="w-100 flex flex-wrap ">
+                <div class="w-70-ns w-100">
+                    <div class="fl w-100 pa2 pt4"> Contact information </div>
+
+                    <div class="fl w-30 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6" placeholder="Phone number" type="text" />
+                    </div>
+
+                    <div class="fl w-70 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6" placeholder="Email address" type="text" />
+                    </div>
+
+                    
+                    <div class="fl w-100 pa2 pv3"> Shipping address </div>
+
+                    <div class="fl w-50 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6" placeholder="First name" type="text" />
+                    </div>
+
+                    <div class="fl w-50 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6" placeholder="Last name" type="text" />
+                    </div>
+
+                    <div class="fl w-100 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6" placeholder="Address" type="text" />
+                    </div>
+
+                    <div class="fl w-third-l w-50-m w-40 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6 " placeholder="City" type="text"  />
+                    </div>
+
+                    <div class="fl w-third-l w-25-m w-50 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6 " placeholder="State" type="text"  />
+                    </div>
+
+                    <div class="fl w-third-l w-25-m w-50 pa2">
+                        <input class="pa2 br2 w-100 ba b--black-05 f6 " placeholder="Country" type="text"  />
+                    </div>
+
+
+                    <div class="fl pt4 w-100 pa2 f7">
+                        <span class="pa3 near-white br2 mr2 bg-black pointer" >
+                            Continue to payment
+                        </span>
+
+                        <span class="pa3 dark-gray br2 ml2 pointer ba b--black-05" @click="$router.push({name:'cart'})">
+                            Return to cart
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div class="fl w-20-l w-third-m w-50 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="Last Name" type="text"  v-model="record.Lastname">
-                </div>
+                <div class="w-30-ns w-100 self-start pa2 ph3 f4-ns f5">
 
-                <div class="fl w-20-l w-third-m w-40 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="Mobile" type="text" v-model="record.Mobile">
-                </div>
-
-                <div class="fl w-40-l w-50-m w-60 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="Email" type="email"  v-model="record.Email">
-                </div>
-                
-                <div class="fl w-30-l w-50-ns w-60 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="street" type="text" v-model="record.Street">
-                </div>
-
-                <div class="fl w-30-l w-50-m w-40 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="City" type="text"  v-model="record.City">
-                </div>
-
-                <div class="fl w-20-l w-25-m w-50 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="State" type="text"  v-model="record.State">
-                </div>
-
-                <div class="fl w-20-l w-25-m w-50 pa1">
-                    <input class="pa2 bn br2 w-100 bg-black-20 " placeholder="Country" type="text"  v-model="record.Country">
-                </div>
-
-                <div class="fl w-100 pa1">
-                    <textarea class="pa2 bn br2 w-100 bg-black-20 " name="" id="" cols="30" rows="3"></textarea>
-                </div>
-
-                <div class="fl w-100 pt3">
-                    <router-link to="/basket" class="f4-ns f5 w-20-l w-25-m w-30 fl tc link dim pv2 mv2 dib white bg-dark-gray">Basket</router-link>
-
-                    <router-link to="/payment" class="f4-ns f5 w-20-l w-25-m w-30 fr tc link dim pv2 mv2 dib white bg-dark-gray">Payment</router-link>
+                    <div class="fl w-100 pv3 tc flex items-center f6"> 
+                        <div class="fl w-100 inline-flex br2 items-center">
+                            <input class="pa2 ba b--silver bg-black-05 bn br2 w-100 fw2 i" placeholder="Discount code" type="text">
+                            <span class="pa2 near-white br2 ml2 bg-gray pointer" >
+                                Apply
+                            </span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="fl w-100 pv3 tc bt b--black-20 flex items-center"> 
+                        <div class="w-30 tl f6"> Total: </div>
+                        <div class="w-70 tr"> $$$$ </div>
+                    </div>
+                    
                 </div>
             </div>
-
         </div>
     
     </div>
@@ -78,7 +100,11 @@
         name: 'home',
         components: {navbar},
         data(){return{
-            notifications:[], Quantity:1, showImageNav:false, record:{ID:0, imageList:[], Image:"", Title:"", Amount:0, Barcode:""}
+            notifications:[], Quantity:1, showImageNav:false, record:{ID:0, imageList:[], Image:"", Title:"", Amount:0, Barcode:""},
+            shoppingBasket:{ 
+                ID:0, Title:"", Code:"", Vatformula:"Inclusive", Shippingmethod:"Pickup", Mobile:"", Email:"", Street:"", 
+                City:"", State:"", Country:"", Totalexcltax: 0, Totalincltax: 0, Taxamount: 0, Workflow:"pending", items:{} 
+            },
         }},
         computed: {
             ...mapGetters('onlinestore', ['getCategoryList','getStoreImage', 'getStoreTitle']),
