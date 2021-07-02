@@ -79,12 +79,18 @@
                         </span>
                     </div>
 
-                    <div class="fl w-100 f6 pv2 pb3">
+                    <div class="dn fl w-100 f6 pv2 pb3">
                         <span @click="$router.push({name:'cart'})" click="$router.push({name:'cart'})" class="f6-ns f7 fl  ph3 tc pv2 ba b--black-40">Add to Cart</span>
                     </div>
 
-                    <div class="fl w-100 f6 pv2 pt3">
+                    <div class="dn fl w-100 f6 pv2 pt3">
                         <span @click="$router.push({name:'home'})" click="$router.push({name:'checkout'})" class="f6-ns f7 fl  ph5 tc pv2 ba b--black-40">Buy It Now</span>
+                    </div>
+
+                    <div class="fl w-100 f6 pv2 pt3">
+                        <a class="link" target="_blank" :href="buyViaWhatsapp()">
+                            <span class="f6-ns f7 fl black ph5 tc pv2 ba b--black-40">Buy It Now</span>
+                        </a>
                     </div>
 
                     <div class="fl w-100 mt3 bt b--black-20">
@@ -138,7 +144,7 @@
             },
         }},
         computed: {
-            ...mapGetters('onlinestore', ['getCategoryList','getStoreTitle','getStoreImage']),
+            ...mapGetters('onlinestore', ['getContactInfo', 'getCategoryList','getStoreTitle','getStoreImage']),
         },
         watch: {
             '$route.params.id': function(newID, oldId) {
@@ -330,8 +336,25 @@
                     var item = this.productList[i]
                     this.productList[i] = this.updateProduct(item)
                 }
-            },
+            }, 
+            buyViaWhatsapp(){
+                let message = `Hello ${encodeURIComponent(this.getStoreTitle)},%0a%0a I want to buy:%0a `
+                message += `*${this.Quantity}* x *${encodeURIComponent(this.record.Item)}'s* for a total of%0a `
+                message += `*${this.humanNumber(this.record.Amount*this.Quantity)}* Naira only`
+                message += `%0a%0a Please confirm availability and i will make payment.`
+                message += `%0a%0a Link: ${encodeURIComponent(window.location.href)}`
 
+                    
+
+                let mobile = this.getContactInfo.Mobile
+                if(mobile.length == 11){
+                    mobile = "234"+mobile
+                //     mobile = "234"+mobile.subString(1,10)
+                }
+            
+                return `https://api.whatsapp.com/send?phone=${mobile}&text=${message}`
+                // Please confirm availability and i will make payment.
+            }
         }
     }
 </script>
