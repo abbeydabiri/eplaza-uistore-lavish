@@ -24,7 +24,7 @@
                                 {{record.Item}} oraimo FreePods-2 2Baba-Version TWS True Wireless Stereo Earbuds
                             </div>
                             <div class="w-100 fl f4-ns f5 fw5 pv3 mid-gray"> 
-                                <span class="b">₦</span> {{humanNumber(shoppingBasket.Totalincltax)}}
+                                <span class="b">R</span> {{humanNumber(shoppingBasket.Totalincltax)}}
                             </div>
 
                             <div class="w-100">

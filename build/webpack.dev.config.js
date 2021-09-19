@@ -18,9 +18,9 @@ module.exports = merge(base, {
         overlay: true,
         disableHostCheck: true,
         proxy : {
-            '/api/*': { "secure": false, "changeOrigin": true, "target": "https://tunde.eplaza.cloud"},
-            '/files/*': { "secure": false, "changeOrigin": true, "target": "https://tunde.eplaza.cloud"},
-            '/images/*': { "secure": false, "changeOrigin": true, "target": "https://tunde.eplaza.cloud"},
+            '/api/*': { "secure": false, "changeOrigin": true, "target": "https://mblothing.eplaza.cloud"},
+            '/files/*': { "secure": false, "changeOrigin": true, "target": "https://mblothing.eplaza.cloud"},
+            '/images/*': { "secure": false, "changeOrigin": true, "target": "https://mblothing.eplaza.cloud"},
         }
     }
 })

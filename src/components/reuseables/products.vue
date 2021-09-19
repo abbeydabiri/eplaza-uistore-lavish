@@ -9,9 +9,7 @@
             <div class="flex flex-row w-third-ns w-50 flex-grow-0 flex-shrink-0 pa2" style="" v-for="(product, index) in products" :key="index">
                 <div @click="$router.push({name:'product',params:{id:product.ID, title:product.Title}})" class="w-100 tc pointer hovershadow" @mouseenter="product.Focus=true" @mouseleave="product.Focus=false">
                         <div class="h5-ns h4 w-100 flex overflow-hidden" style="max-height:250px;background-position: center;background-size: cover;"
-                        :style="{ backgroundImage: 'url(' + product.Image + ')' }" ></div>
-
-                    
+                        :style="{ backgroundImage: `url('` + product.Image + `')` }" ></div>
                     <div class="w-100 flex flex-column tc pa1 near-black br2 br--bottom"> 
                         <div class="f6 pa1 truncate">{{product.Title}}</div> 
                         <div class="f5 fw6 pb1">{{product.Currency}}{{humanNumber(product.Amount)}}</div>

@@ -23,11 +23,13 @@
 
             <div class="f7 fl pa2 w-100 " :class="{'dn':record.ID==0}">
                 <div class="fl w-50-l w-60-m w-100 h-100-l">
-
                     <div class="flex flex-row items-center w-100 relative  br2" @mouseenter="showImageNav=true" @mouseleave="showImageNav=false"> 
                         <i :class="{'bg-white-70 black':showImageNav,'bg-white-30 black-30':!showImageNav}" class="absolute left-0 pointer fa fa-caret-left ml2 f5-ns f6 ph2 pv1 br-100" @click="prevImage"  />
                         <div id="zoom-img" class="w-100 flex productImage overflow-hidden" style="max-height:500px;height:75vh;background-position: center;background-size: cover;"
-                        :style="{ backgroundImage: 'url(' + record.imageList[curImage].Filepath + ')' }" ></div>
+                            :style="{ backgroundImage: `url('` + record.imageList[curImage].Filepath.replace(/'/g, '%27') + `')` }"
+                        >   
+                        
+                        </div>
                         <i :class="{'bg-white-70 black':showImageNav,'bg-white-30 black-30':!showImageNav}" class="absolute right-0 pointer fa fa-caret-right mr2 f5-ns f6 ph2 pv1 br-100" @click="nextImage" />
                     </div>
 
@@ -51,7 +53,7 @@
                     </div>
 
                     <div class="w-100 fl f4-l f5 fw5 pv2 red"> 
-                        <span class="b">₦</span>{{humanNumber(record.Amount)}}
+                        <span class="b">R</span>{{humanNumber(record.Amount)}}
                     </div>
 
                     <div v-if="record.ItemDescription!==''" class="mid-gray w-100 fl f6 pt2 pb3">
@@ -87,7 +89,7 @@
                         <span @click="$router.push({name:'home'})" click="$router.push({name:'checkout'})" class="f6-ns f7 fl  ph5 tc pv2 ba b--black-40">Buy It Now</span>
                     </div>
 
-                    <div class="fl w-100 f6 pv2 pt3">
+                    <div class="fl w-100 f6 pv2 pt3 pointer">
                         <a class="link" target="_blank" :href="buyViaWhatsapp()">
                             <span class="f6-ns f7 fl black ph5 tc pv2 ba b--black-40">Buy It Now</span>
                         </a>
@@ -338,18 +340,22 @@
                 }
             }, 
             buyViaWhatsapp(){
+                
                 let message = `Hello ${encodeURIComponent(this.getStoreTitle)},%0a%0a I want to buy:%0a `
                 message += `*${this.Quantity}* x *${encodeURIComponent(this.record.Item)}'s* for a total of%0a `
                 message += `*${this.humanNumber(this.record.Amount*this.Quantity)}* Naira only`
                 message += `%0a%0a Please confirm availability and i will make payment.`
                 message += `%0a%0a Link: ${encodeURIComponent(window.location.href)}`
 
-                    
-
                 let mobile = this.getContactInfo.Mobile
-                if(mobile.length == 11){
-                    mobile = "234"+mobile
-                //     mobile = "234"+mobile.subString(1,10)
+
+                switch (mobile.length) {
+                    case 10:
+                         mobile = "27"+mobile.subString(1,10)
+                        break;
+
+                    case 11:
+                        mobile = "234"+mobile.subString(1,10)
                 }
             
                 return `https://api.whatsapp.com/send?phone=${mobile}&text=${message}`

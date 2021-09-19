@@ -50,7 +50,7 @@
         watch: {
             '$route.params.category': function(newCurCategory, oldCurCategory) {
                 this.curCategory = newCurCategory
-                if (this.curCategory == "all") {
+                if (this.curCategory == "all" || this.curCategory == undefined) {
                     this.curCategory = ""
                 }
                 this.searchProducts()
